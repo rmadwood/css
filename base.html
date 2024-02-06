@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kust Landing Page</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Poppins&family=Wix+Madefor+Display:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="fondo">
+
+
+        
+    </div>
+
+    <div class="cuadro">
+
+        <div class="titulo">
+
+            <h1>Truck accident lawyer</h1>
+
+        </div>
+
+        <div class="texto2">
+
+            <h2 class="cosas">We are <span class="multitexto"></span></h2>
+
+        </div>
+
+        <div class="texto3">
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto quam maxime ducimus quis nihil, officia quaerat cum vitae cupiditate beatae inventore quisquam nisi dignissimos enim, necessitatibus optio ipsam ab adipisci!</p>
+
+        </div>
+        
+        <div class="question-container active" id="question1">
+            <h2>How did the accident happen?</h2>
+            <form id="form1">
+              <label><input type="radio" name="answer1" value="a" checked> Opción A</label>
+              <label><input type="radio" name="answer1" value="b"> Opción B</label>
+              <label><input type="radio" name="answer1" value="c"> Opción C</label>
+            </form>
+            <button onclick="nextQuestion('question1')">Next</button>
+          </div>
+        
+          <div class="question-container" id="question2">
+            <h2>Are your injuries serious?</h2>
+            <form id="form2">
+              <label><input type="radio" name="answer2" value="a" checked> Opción A</label>
+              <label><input type="radio" name="answer2" value="b"> Opción B</label>
+              <label><input type="radio" name="answer2" value="c"> Opción C</label>
+            </form>
+            <button onclick="nextQuestion('question2')">Next</button>
+          </div>
+        
+          <div class="question-container" id="question3">
+            <h2>Is the damage to your vehicle serious?</h2>
+            <form id="form3">
+              <label><input type="radio" name="answer3" value="a" checked> Opción A</label>
+              <label><input type="radio" name="answer3" value="b"> Opción B</label>
+              <label><input type="radio" name="answer3" value="c"> Opción C</label>
+            </form>
+            <button onclick="showResult()">Send answers</button>
+          </div>
+        
+          <div id="submit-btn">
+            <button onclick="submitForm()">See the lawyers</button>
+          </div>
+
+        <div class="abogado">
+
+            <img src="media/lawyer.png" alt="" class="lawyer">
+
+        </div>
+        
+
+</div>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <script>
+      
+        var efectoEscritura = new Typed(".multitexto",{
+            strings : ["direct", "commited", "the best"],
+            loop : true,
+            typeSpeed : 80,
+            backSpeed : 60,
+            backDelay : 1000
+          })
+      
+    </script>
+
+<script>
+    function nextQuestion(currentQuestion) {
+      var currentQuestionElement = document.getElementById(currentQuestion);
+      currentQuestionElement.classList.remove('active');
+
+      var nextQuestionNumber = parseInt(currentQuestion.substr(-1)) + 1;
+      var nextQuestion = "question" + nextQuestionNumber;
+
+      var nextQuestionElement = document.getElementById(nextQuestion);
+      nextQuestionElement.classList.add('active');
+    }
+
+    function showResult() {
+      var lastQuestionElement = document.getElementById('question3');
+      lastQuestionElement.classList.remove('active');
+
+      var submitBtn = document.getElementById('submit-btn');
+      submitBtn.style.display = 'block';
+    }
+
+    function submitForm() {
+      // Cambia la URL a la que quieres redirigir al usuario
+      window.location.href = 'https://www.deepl.com/';
+    }
+  </script>
+
+
+</body>
+</html>
